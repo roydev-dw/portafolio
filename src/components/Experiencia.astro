@@ -1,0 +1,38 @@
+---
+import ExperienciaItem from './ExperienciaItem.astro'
+
+const EXPERIENCIA = [
+  {
+    fecha: 'Febrero - 2024',
+    empresa: 'Cristalerías Chile S.A.',
+    titulo: 'Operador Máquina Serigráfica',
+    descripcion: '+14 años de experiencia en mecánica y manejo de máquinas de serigrafía en envases de vidrio. Ascendido de operario a operador de máquina y encargado de la línea de producción. Experiencia como operador especialista, brindando apoyo técnico y gestionando personal durante los turnos. Capacitado en estandares 5S, GMP, TPM y BRC',
+    link:'https://www.cristalchile.cl/'
+  },
+  {
+    fecha: '2007 - 2008',
+    empresa: 'Cristalerías Toro',
+    titulo: 'Ayudante de Maquinista',
+    descripcion: 'Ayudante de maquinista en línea de producción de decorado, serigrafía sobre envases de vidrio.',
+    link:'https://www.cristoro.cl/'
+  },
+  {
+    fecha: '2005 - 2006',
+    empresa: 'Nestle S.A.',
+    titulo: 'Operario',
+    descripcion: 'Operario de producción, manejo de máquinas envasadoras, manejo de productos alimenticios, armado y gestión de productos terminados',
+    link:''
+  }
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3.5">
+  {
+    EXPERIENCIA.map(experiencia => (
+      <li class='mb-10 ms-7'>
+        <ExperienciaItem {...experiencia } />
+      </li>
+    ))
+  }        
+</ol>
+

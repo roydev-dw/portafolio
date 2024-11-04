@@ -1,0 +1,25 @@
+---
+interface Props {
+  fecha: string
+  empresa: string
+  titulo: string
+  descripcion: string
+  link?: string
+}
+
+const { titulo, descripcion, link, fecha, empresa } = Astro.props
+---
+
+<span class="absolute flex items-center justify-center size-4 bg-white rounded-full -start-2"></span>
+<time class="block mb-5 text-lg font-normal leading-none text-emerald-300">{ fecha }</time>
+<h2 class="flex items-center text-2xl font-semibold text-amber-200 dark:text-white">{ empresa }</h2>
+<h3 class="flex items-center gap-x-4 text-xl font-semibold text-slate-200 dark:text-white">{ titulo }</h3>
+<p class="mt-5 mb-8 text-lg font-normal text-white/80 dark:text-gray-400 text-pretty ">{ descripcion }</p>
+{
+  link && (
+  <a href={ link } class="inline-flex items-center px-5 py-2 text-sm text-white bg-white/10 border border-white/10 rounded-full hover:scale-105 hover:bg-white/30 transition duration-300 focus:z-10 focus:ring-4 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+  Saber más<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="ml-3 icon icon-tabler icons-tabler-outline icon-tabler-arrow-big-right-line"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v-3.586a1 1 0 0 1 1.707 -.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586a1 1 0 0 1 -1.707 -.707v-3.586h-6v-6h6z" /><path d="M3 9v6" /></svg>
+  </a>
+  )
+}
+
